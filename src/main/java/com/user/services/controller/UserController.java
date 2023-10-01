@@ -30,7 +30,7 @@ public class UserController {
 	
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	int retryCount=1;
+	int retryCount=10;
 	
 	@PostMapping
 	public ResponseEntity<User> createUser(@RequestBody User user){
