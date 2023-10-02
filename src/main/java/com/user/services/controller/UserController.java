@@ -30,7 +30,7 @@ public class UserController {
 	
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	int retryCount=10;
+//	int retryCount=10;
 	
 	@PostMapping
 	public ResponseEntity<User> createUser(@RequestBody User user){
@@ -44,7 +44,7 @@ public class UserController {
 	@RateLimiter(name="userRateLimiter", fallbackMethod ="ratingHotelFallback")
 	public ResponseEntity<User> getSingleUser(@PathVariable String userId){
 		logger.info("Get Single user handler: UserController");
-		logger.info("Retry Count: {}", retryCount);
+//		logger.info("Retry Count: {}", retryCount);
 		User user = userService.getUser(userId);
 		return ResponseEntity.ok(user);	
 	}
